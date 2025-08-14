@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DropAlpha Mentor — Master Shopify Dropshipping</title>
+
+  <!-- Tailwind + Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <style>
+    :root{
+      --lilac:#C8A2C8; --blue:#7FDBFF; --ink:#e9ecf1; --muted:#a7afbb; --panel:#111523; --bg:#0b0b10;
+    }
+
+    /* animated global gradient background */
+    html {
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #0A0014 0%, #0B1C33 30%, #430443 65%, #022736 100%);
+  background-size: 300% 300%;
+  animation: gradientShift 18s ease infinite;
+    }
+    @keyframes gradientShift{
+      0%{background-position:0% 50%}
+      50%{background-position:100% 50%}
+      100%{background-position:0% 50%}
+    }
+
+    /* helper animations used in hero */
+    @keyframes slowZoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+    .animate-slow-zoom{animation:slowZoom 16s ease-in-out infinite alternate}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-6px)}100%{transform:translateY(0)}}
+    .animate-float{animation:floaty 6s ease-in-out infinite}
+
+    /* hide scrollbar utility */
+    .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+    .hide-scrollbar::-webkit-scrollbar{display:none}
+
+    /* brand glow utility */
+    @keyframes brandGlow{
+      0%{box-shadow:0 0 15px rgba(139,92,246,.30)}
+      50%{box-shadow:0 0 50px rgba(59,130,246,.80)}
+      100%{box-shadow:0 0 15px rgba(139,92,246,.30)}
+    }
+    .glow-effect{animation:brandGlow 2.5s infinite ease-in-out; border-radius:14px}
+
+    /* premium purple card */
+    .purple-card{
+      background:linear-gradient(145deg,rgba(91,33,182,.95),rgba(139,92,246,.95));
+      border-radius:1.3rem; padding:2.5rem; color:#fff;
+      box-shadow:0 0 35px rgba(139,92,246,.40),0 12px 65px rgba(0,0,0,.25), inset 0 0 12px rgba(255,255,255,.05);
+      transition:transform .3s ease, box-shadow .3s ease; position:relative; overflow:hidden
+    }
+    .purple-card::before{
+      content:""; position:absolute; top:-60%; left:-50%; width:200%; height:200%;
+      background:radial-gradient(circle at center, rgba(255,255,255,.06), transparent 70%);
+      transform:rotate(25deg); pointer-events:none
+    }
+    .purple-card:hover{transform:translateY(-6px) scale(1.02);
+      box-shadow:0 0 50px rgba(139,92,246,.55),0 22px 75px rgba(0,0,0,.30), inset 0 0 18px rgba(255,255,255,.08)
+    }
+
+    /* better readability on glass header */
+    .nav-link{color:#fff}
+    .nav-link:hover{color:rgb(216,180,254)}
+  </style>
+</head>
+
+<body class="text-white">
+  <!-- Header -->
+  <header class="fixed inset-x-0 top-0 z-50 bg-white/10 backdrop-blur-xl border-b border-white/10 shadow-lg">
+    <div class="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+      <div class="text-2xl md:text-3xl font-extrabold text-purple-200 tracking-tight">
+        DropAlphaMentor
+      </div>
+
+      <nav>
+        <ul class="hidden md:flex items-center space-x-6 text-base">
+          <li><a class="nav-link" href="#hero">Home</a></li>
+          <li><a class="nav-link" href="#about">About</a></li>
+          <li><a class="nav-link" href="#programs">Programs</a></li>
+          <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li><a class="nav-link" href="#faq">FAQ</a></li>
+          <li><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+
+        <!-- mobile button -->
+        <button id="menu-toggle" class="md:hidden text-purple-200 p-2" aria-label="Open menu">
+          <i class="fas fa-bars fa-lg"></i>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white/10 backdrop-blur-md border-t border-white/10">
+      <ul class="flex flex-col space-y-4 p-4 text-base">
+        <li><a class="nav-link" href="#hero">Home</a></li>
+        <li><a class="nav-link" href="#about">About</a></li>
+        <li><a class="nav-link" href="#how-it-works">Programs</a></li>
+        <li><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li><a class="nav-link" href="#faq">FAQ</a></li>
+        <li><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="relative min-h-screen overflow-hidden pt-28">
+    <!-- Background -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1557804506-669a67965ba0"
+        alt="Hero background"
+        class="w-full h-full object-cover animate-slow-zoom brightness-60 blur-sm" />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[calc(100vh-7rem)] flex items-center justify-center">
+      <div class="text-center max-w-3xl animate-float">
+        <!-- Kicker -->
+        <div class="inline-block px-5 py-2 mb-6 rounded-full border border-[var(--lilac)]/50 text-[var(--lilac)]"
+             style="background:#111523;">
+          Your Shortcut to Profitable Dropshipping
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-4xl sm:text-6xl md:text-7xl font-black tracking-tight mb-6 leading-tight">
+          <span class="block bg-clip-text text-transparent bg-gradient-to-r from-white via-[var(--blue)] to-[var(--lilac)]">
+            Build, Scale and Automate
+          </span>
+          <span class="block bg-clip-text text-transparent bg-gradient-to-r from-[var(--lilac)] via-[var(--blue)] to-white mt-2">
+            With DropAlphaMentor
+          </span>
+        </h1>
+
+        <!-- Subtext -->
+        <p class="text-base sm:text-lg md:text-xl text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">
+          Stop guessing, start growing. Product signals, ad strategy, and funnel control that turn clicks into consistent cashflow.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-5 justify-center items-center">
+          <a href="https://linktr.ee/dropalphamentor"
+             class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 text-lg font-extrabold rounded-full text-[#0b0b10] bg-gradient-to-r from-[var(--lilac)] to-[var(--blue)] shadow-lg hover:scale-105 transition-all duration-300">
+            Apply Now
+          </a>
+
+          <a href="#how-it-works"
+             class="w-full sm:w-auto inline-flex items-center justify-center px-7 py-4 text-lg font-bold rounded-full border border-[var(--blue)]/60 text-white hover:border-[var(--lilac)]/70 shadow-md hover:scale-105 transition-all duration-300">
+            <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            See How It Works
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- ===================== Core Value Proposition ===================== -->
+<section id="value" class="relative py-24" aria-labelledby="cvp-title">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 id="cvp-title" class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">
+        Core Value Proposition
+      </h2>
+      <p class="mt-4 text-lg text-white/80">
+        Why this mentorship is different: operators, not influencers. We build revenue systems you can scale on command.
+      </p>
+
+      <!-- Standard: quick bullets -->
+      <ul class="mt-8 grid sm:grid-cols-2 gap-3 text-left">
+        <li class="flex items-start gap-3 text-white/90">
+          <span class="mt-1 text-purple-300"><i class="fa-solid fa-check"></i></span>
+          <span><strong class="text-white">Signal‑based product picks</strong> so you stop guessing and start compounding.</span>
+        </li>
+        <li class="flex items-start gap-3 text-white/90">
+          <span class="mt-1 text-purple-300"><i class="fa-solid fa-check"></i></span>
+          <span><strong class="text-white">Funnel control</strong> from offer to checkout for consistent conversion lift.</span>
+        </li>
+        <li class="flex items-start gap-3 text-white/90">
+          <span class="mt-1 text-purple-300"><i class="fa-solid fa-check"></i></span>
+          <span><strong class="text-white">Creative that sells</strong> with hooks mapped to identity, not vibes.</span>
+        </li>
+        <li class="flex items-start gap-3 text-white/90">
+          <span class="mt-1 text-purple-300"><i class="fa-solid fa-check"></i></span>
+          <span><strong class="text-white">Cashflow‑safe scaling</strong> with rules, payback windows, and supplier sync.</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Advanced: interactive effect info cards -->
+    <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+      <!-- Card 1 -->
+      <article
+        class="group purple-card hover:scale-[1.02] hover:shadow-2xl ring-1 ring-white/10 hover:ring-purple-300/40 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-purple-400 to-blue-400 text-[#0b0b10]">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="text-xl font-extrabold">Signal‑Based Selection</h3>
+        </div>
+        <p class="mt-3 text-white/90">
+          Demand, margin, and velocity validated before spend. Angles tested to match buyer intent.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">72‑hour validation loop</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">1 in 3 creatives hits KPI</span>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Avg. MoM lift</div>
+            <div class="text-2xl font-black">+34%</div>
+          </div>
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Test cost saved</div>
+            <div class="text-2xl font-black">$420</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article
+        class="group purple-card hover:scale-[1.02] hover:shadow-2xl ring-1 ring-white/10 hover:ring-purple-300/40 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-purple-400 to-blue-400 text-[#0b0b10]">
+            <i class="fa-solid fa-bullseye"></i>
+          </div>
+          <h3 class="text-xl font-extrabold">Funnel Control</h3>
+        </div>
+        <p class="mt-3 text-white/90">
+          Offer math, page speed, and checkout friction solved in sequence. Clicks stop leaking, AOV rises.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">+18–35% conversion</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">&lt; 3s LCP</span>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Checkout CR</div>
+            <div class="text-2xl font-black">+22%</div>
+          </div>
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">AOV Lift</div>
+            <div class="text-2xl font-black">+17%</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article
+        class="group purple-card hover:scale-[1.02] hover:shadow-2xl ring-1 ring-white/10 hover:ring-purple-300/40 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-purple-400 to-blue-400 text-[#0b0b10]">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <h3 class="text-xl font-extrabold">Creatives That Sell</h3>
+        </div>
+        <p class="mt-3 text-white/90">
+          Hooks that hit identity and fear, rapid cuts, direct asks. Built to win cheap attention and convert.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">CTR +28%</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">CPA −19%</span>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Winning rate</div>
+            <div class="text-2xl font-black">33%</div>
+          </div>
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">First 7‑day rev</div>
+            <div class="text-2xl font-black">$3.1k</div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article
+        class="group purple-card hover:scale-[1.02] hover:shadow-2xl ring-1 ring-white/10 hover:ring-purple-300/40 transition">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-purple-400 to-blue-400 text-[#0b0b10]">
+            <i class="fa-solid fa-shield-heart"></i>
+          </div>
+          <h3 class="text-xl font-extrabold">Cashflow‑Safe Scaling</h3>
+        </div>
+        <p class="mt-3 text-white/90">
+          Spend ramps on rules. ROAS floors, daily caps, and supplier sync protect margin while you grow.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">48‑hr payback window</span>
+          <span class="text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">Refund &lt; 1.5%</span>
+        </div>
+        <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Daily scale</div>
+            <div class="text-2xl font-black">+40%</div>
+          </div>
+          <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow transition">
+            <div class="text-white/70">Cash held</div>
+            <div class="text-2xl font-black">2.1×</div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a href="https://linktr.ee/dropalphamentor" target="_blank"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-full font-extrabold text-[#0b0b10] text-lg bg-gradient-to-r from-purple-300 to-blue-300 shadow-xl hover:scale-105 transition">
+        Apply for Mentorship
+      </a>
+      <div class="mt-5 text-white/80 text-sm">
+        Micro‑proof from client cohorts. Results vary by niche, budget, and execution.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== How It Works (Step-by-Step) ===================== -->
+<section id="how-it-works" class="relative py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">How It Works</h2>
+      <p class="mt-4 text-lg text-white/80">
+        No mystery. Four moves. Clear checkpoints. You always know what’s next.
+      </p>
+
+      <!-- Quick Explainer -->
+      <button
+        class="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-full bg-white/10 border border-white/15 hover:scale-105 transition"
+        data-open="explainerModal">
+        <i class="fa-solid fa-circle-play text-purple-300 text-xl"></i>
+        <span class="font-semibold">Watch quick review</span>
+        <span class="text-white/60 text-sm">45s</span>
+      </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="mt-12">
+      <div class="relative max-w-4xl mx-auto">
+        <!-- base track -->
+        <div class="h-2 rounded-full bg-white/10"></div>
+        <!-- active fill (updated on hover) -->
+        <div id="hiw-progress" class="absolute inset-y-0 left-0 h-2 rounded-full transition-all duration-300"
+             style="width: 25%; background: linear-gradient(90deg,#C8A2C8,#7FDBFF);"></div>
+        <!-- step dots -->
+        <div class="mt-4 grid grid-cols-4 text-center text-sm text-white/80">
+          <div>01 Plan</div>
+          <div>02 Build</div>
+          <div>03 Launch</div>
+          <div>04 Scale</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steps -->
+    <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      <!-- Step 1 -->
+      <article class="group rounded-2xl p-6 text-white shadow-lg transition hover:scale-[1.02] cursor-pointer"
+               style="background: linear-gradient(145deg, rgba(91,33,182,0.95), rgba(139,92,246,0.95));"
+               data-progress="25" data-open="step1">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <span class="text-sm font-bold px-3 py-1 rounded-full bg-white/10 border border-white/15">01</span>
+        </div>
+        <h3 class="mt-5 text-xl font-extrabold">Plan: Offer and Signals</h3>
+        <p class="mt-2 text-white/90">We lock a crisp offer, map buyer fears, and shortlist SKUs with demand, margin, velocity.</p>
+        <ul class="mt-4 space-y-1 text-sm text-white/80">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>72-hour validation loop</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Angle board ready</li>
+        </ul>
+      </article>
+
+      <!-- Step 2 -->
+      <article class="group rounded-2xl p-6 text-white shadow-lg transition hover:scale-[1.02] cursor-pointer"
+               style="background: linear-gradient(145deg, rgba(91,33,182,0.95), rgba(139,92,246,0.95));"
+               data-progress="50" data-open="step2">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+          </div>
+          <span class="text-sm font-bold px-3 py-1 rounded-full bg-white/10 border border-white/15">02</span>
+        </div>
+        <h3 class="mt-5 text-xl font-extrabold">Build: Store and Funnel</h3>
+        <p class="mt-2 text-white/90">Pages, speed, and checkout friction fixed in sequence for clean conversion paths.</p>
+        <ul class="mt-4 space-y-1 text-sm text-white/80">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>&lt; 3s LCP target</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>+18–35% CR lift</li>
+        </ul>
+      </article>
+
+      <!-- Step 3 -->
+      <article class="group rounded-2xl p-6 text-white shadow-lg transition hover:scale-[1.02] cursor-pointer"
+               style="background: linear-gradient(145deg, rgba(91,33,182,0.95), rgba(139,92,246,0.95));"
+               data-progress="75" data-open="step3">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <span class="text-sm font-bold px-3 py-1 rounded-full bg-white/10 border border-white/15">03</span>
+        </div>
+        <h3 class="mt-5 text-xl font-extrabold">Launch: Creatives and Ads</h3>
+        <p class="mt-2 text-white/90">Hooks that hit identity, fast edits, direct asks. KPI-driven, not vibes.</p>
+        <ul class="mt-4 space-y-1 text-sm text-white/80">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>33% win-rate target</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>CPA −19% vs baseline</li>
+        </ul>
+      </article>
+
+      <!-- Step 4 -->
+      <article class="group rounded-2xl p-6 text-white shadow-lg transition hover:scale-[1.02] cursor-pointer"
+               style="background: linear-gradient(145deg, rgba(91,33,182,0.95), rgba(139,92,246,0.95));"
+               data-progress="100" data-open="step4">
+        <div class="flex items-center justify-between">
+          <div class="w-11 h-11 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <span class="text-sm font-bold px-3 py-1 rounded-full bg-white/10 border border-white/15">04</span>
+        </div>
+        <h3 class="mt-5 text-xl font-extrabold">Scale: Rules and Guardrails</h3>
+        <p class="mt-2 text-white/90">Daily caps, ROAS floors, supplier sync. Growth without bleeding cash.</p>
+        <ul class="mt-4 space-y-1 text-sm text-white/80">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>48-hr payback window</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Refund &lt; 1.5%</li>
+        </ul>
+      </article>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a href="https://linktr.ee/dropalphamentor" target="_blank"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-full font-extrabold text-[#0b0b10] text-lg bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] shadow-xl hover:scale-105 transition">
+        Book Your Strategy Call
+      </a>
+    </div>
+  </div>
+
+  <!-- ===================== Popups ===================== -->
+  <!-- Quick Explainer -->
+  <div id="explainerModal" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-2xl mx-auto mt-24 bg-[#0b0b10] border border-white/10 rounded-2xl p-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Quick review — 45s</h3>
+        <button class="text-white/70 hover:text-white" data-close="explainerModal"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <div class="mt-4 aspect-video w-full rounded-xl overflow-hidden bg-white/5 grid place-items-center">
+  <video src="IMG_1714.MP4" controls class="w-full h-full object-cover"></video>
+</div>
+      <div class="mt-6 text-right">
+        <a href="https://linktr.ee/dropalphamentor" target="_blank"
+           class="inline-flex items-center gap-2 px-5 py-3 rounded-full font-semibold text-[#0b0b10] bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">
+          Apply Now <i class="fa-solid fa-arrow-right-long"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Step Modals (1–4) -->
+  <div id="step1" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-xl mx-auto mt-28 bg-[#0b0b10] border border-white/10 rounded-2xl p-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Step 01 — Plan: Offer and Signals</h3>
+        <button class="text-white/70 hover:text-white" data-close="step1"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <p class="mt-4 text-white/80">We define the offer, map buyer identity, and shortlist products with data. You get a 72-hour validation loop and angle board to test fast without burning budget.</p>
+    </div>
+  </div>
+
+  <div id="step2" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-xl mx-auto mt-28 bg-[#0b0b10] border border-white/10 rounded-2xl p-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Step 02 — Build: Store and Funnel</h3>
+        <button class="text-white/70 hover:text-white" data-close="step2"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <p class="mt-4 text-white/80">We implement page speed, clarity, and checkout fixes in sequence. Goal is &lt;3s LCP and +18–35% conversion lift before scale.</p>
+    </div>
+  </div>
+
+  <div id="step3" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-xl mx-auto mt-28 bg-[#0b0b10] border border-white/10 rounded-2xl p-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Step 03 — Launch: Creatives and Ads</h3>
+        <button class="text-white/70 hover:text-white" data-close="step3"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <p class="mt-4 text-white/80">We ship identity-driven hooks and iterate ads against KPI. Target is 33% winning creatives and cheaper CPA within first sprints.</p>
+    </div>
+  </div>
+
+  <div id="step4" class="fixed inset-0 z-[60] hidden">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative max-w-xl mx-auto mt-28 bg-[#0b0b10] border border-white/10 rounded-2xl p-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Step 04 — Scale: Rules and Guardrails</h3>
+        <button class="text-white/70 hover:text-white" data-close="step4"><i class="fa-solid fa-xmark text-xl"></i></button>
+      </div>
+      <p class="mt-4 text-white/80">We scale on rules, not feelings — daily caps, ROAS floors, and supplier sync. Aim for 48-hour payback and refund rate &lt;1.5%.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Script: progress + modals -->
+<script>
+  // progress bar updates on card hover
+  const progress = document.getElementById('hiw-progress');
+  document.querySelectorAll('#how-it-works [data-progress]').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+      progress.style.width = card.getAttribute('data-progress') + '%';
+    });
+  });
+
+  // open/close modals
+  const openers = document.querySelectorAll('[data-open]');
+  const closers = document.querySelectorAll('[data-close]');
+  openers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = btn.getAttribute('data-open');
+      const modal = document.getElementById(id);
+      if(modal){ modal.classList.remove('hidden'); }
+    });
+  });
+  closers.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-close');
+      const modal = document.getElementById(id);
+      if(modal){ modal.classList.add('hidden'); }
+    });
+  });
+  // close on backdrop click
+  document.querySelectorAll('#how-it-works [id^="step"], #explainerModal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal){ modal.classList.add('hidden'); }
+    });
+  });
+</script>
+
+<!-- ===================== What’s Inside the Program ===================== -->
+<section id="inside" class="relative py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">What’s Inside the Program</h2>
+      <p class="mt-4 text-lg text-white/80">
+        Tangible, end-to-end execution. We build revenue systems, not theory.
+      </p>
+    </div>
+
+    <!-- Standard: succinct scope bullets -->
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+          <h3 class="font-extrabold">Product Research</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Signal-based validation, margin math, angle board, 72-hour feedback loop.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-truck-fast text-xl"></i>
+          <h3 class="font-extrabold">Reliable Supplier</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Vetting, test orders, SLA setup, inventory and shipping sync.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-sitemap text-xl"></i>
+          <h3 class="font-extrabold">Theme + Funnel</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Speed targets, offer architecture, checkout fixes, post-purchase upsell.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-palette text-xl"></i>
+          <h3 class="font-extrabold">Premium Brand Site</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Branded visuals, trust assets, sections that sell, CRO-safe animations.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-clapperboard text-xl"></i>
+          <h3 class="font-extrabold">Creatives + Ads</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Identity-driven hooks, rapid iteration, KPI gates, rules-based scaling.
+        </p>
+      </div>
+
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15">
+        <div class="flex items-center gap-3 text-purple-200">
+          <i class="fa-solid fa-robot text-xl"></i>
+          <h3 class="font-extrabold">Automation</h3>
+        </div>
+        <p class="mt-3 text-white/85">
+          Ops dashboards, order flows, alerts, reporting cadence that compounds.
+        </p>
+      </div>
+    </div>
+
+    <!-- Advanced: Tiers with tabs + dashboard mockups -->
+    <div class="mt-16 grid lg:grid-cols-12 gap-8" id="tiers">
+      <!-- Tabs / Content -->
+      <div class="lg:col-span-6">
+        <!-- Tab buttons -->
+        <div class="flex flex-wrap gap-3">
+          <button class="tier-tab active px-5 py-2 rounded-full font-semibold text-[#0b0b10]"
+                  style="background:linear-gradient(90deg,#C8A2C8,#7FDBFF)" data-tier="starter">
+            Starter
+          </button>
+          <button class="tier-tab px-5 py-2 rounded-full font-semibold border border-white/20 text-white hover:bg-white/10"
+                  data-tier="pro">
+            Pro
+          </button>
+          <button class="tier-tab px-5 py-2 rounded-full font-semibold border border-white/20 text-white hover:bg-white/10"
+                  data-tier="elite">
+            Elite
+          </button>
+        </div>
+
+        <!-- Panels -->
+        <div class="mt-6 space-y-4">
+          <!-- Starter -->
+          <div class="tier-panel" data-tier-panel="starter">
+            <div class="rounded-2xl p-6 purple-card ring-1 ring-white/10">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+                <h3 class="text-xl font-extrabold">Starter — Foundation built right</h3>
+              </div>
+              <ul class="mt-4 space-y-2 text-white/90">
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Product shortlist with validation checklist</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Theme configuration and speed targets (&lt;3s LCP)</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Offer copy blocks and basic UGC ad kit</li>
+              </ul>
+              <div class="mt-5 grid grid-cols-2 gap-4 text-sm">
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">Avg. CR Lift</div><div class="text-2xl font-black">+12%</div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">Time to first sale</div><div class="text-2xl font-black">7–14d</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pro -->
+          <div class="tier-panel hidden" data-tier-panel="pro">
+            <div class="rounded-2xl p-6 purple-card ring-1 ring-white/10">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+                  <i class="fa-solid fa-rocket"></i>
+                </div>
+                <h3 class="text-xl font-extrabold">Pro — Scale with guardrails</h3>
+              </div>
+              <ul class="mt-4 space-y-2 text-white/90">
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Supplier SLA + inventory sync</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Creative sprints (33% win-rate target)</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Rules-based scaling with ROAS floors</li>
+              </ul>
+              <div class="mt-5 grid grid-cols-2 gap-4 text-sm">
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">MoM Revenue</div><div class="text-2xl font-black">+34%</div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">CPA vs base</div><div class="text-2xl font-black">−19%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Elite -->
+          <div class="tier-panel hidden" data-tier-panel="elite">
+            <div class="rounded-2xl p-6 purple-card ring-1 ring-white/10">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="text-xl font-extrabold">Elite — Operator mode</h3>
+              </div>
+              <ul class="mt-4 space-y-2 text-white/90">
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Done-with-you team workflows and SOPs</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Offer and AOV engineering, LTV plays</li>
+                <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Automation stack and KPI dashboards</li>
+              </ul>
+              <div class="mt-5 grid grid-cols-2 gap-4 text-sm">
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">Payback window</div><div class="text-2xl font-black">48h</div>
+                </div>
+                <div class="bg-white/10 rounded-lg px-3 py-2 hover-glow">
+                  <div class="text-white/70">Refund rate</div><div class="text-2xl font-black">&lt;1.5%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Mockup Panel -->
+      <div class="lg:col-span-6">
+        <div class="relative rounded-3xl overflow-hidden border border-white/15 bg-white/5 backdrop-blur-sm">
+          <!-- device frame -->
+          <div class="bg-black/40 px-4 py-3 flex items-center gap-2 border-b border-white/10">
+            <span class="w-3 h-3 rounded-full bg-red-400/70"></span>
+            <span class="w-3 h-3 rounded-full bg-yellow-400/70"></span>
+            <span class="w-3 h-3 rounded-full bg-green-400/70"></span>
+            <span class="ml-3 text-sm text-white/70">Training Dashboard — <span id="mockup-label">Starter</span></span>
+          </div>
+
+          <!-- mockup images swap per tier (use your own screenshots later) -->
+          <div class="relative aspect-[16/10]">
+            <img id="mockup-starter" class="absolute inset-0 w-full h-full object-cover"
+                 src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop"
+                 alt="Starter dashboard mockup">
+            <img id="mockup-pro" class="absolute inset-0 w-full h-full object-cover hidden"
+                 src="https://images.unsplash.com/photo-1529336953121-ad5a0d43d0d2?q=80&w=1600&auto=format&fit=crop"
+                 alt="Pro dashboard mockup">
+            <img id="mockup-elite" class="absolute inset-0 w-full h-full object-cover hidden"
+                 src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1600&auto=format&fit=crop"
+                 alt="Elite dashboard mockup">
+            <!-- gradient overlay to match brand -->
+            <div class="absolute inset-0 bg-gradient-to-tr from-[#C8A2C8]/20 via-transparent to-[#7FDBFF]/25"></div>
+          </div>
+
+          <!-- caption -->
+          <div class="px-5 py-4 text-sm text-white/80 border-t border-white/10">
+            Live modules, checklists, creative boards, KPI tracker, and SOP library. Swap the screenshots with your real dashboard.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 text-center">
+      <a href="https://linktr.ee/dropalphamentor" target="_blank"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-full font-extrabold text-[#0b0b10] text-lg bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] shadow-xl hover:scale-105 transition">
+        See Which Tier Fits You
+      </a>
+    </div>
+  </div>
+
+  <!-- Tabs script -->
+  <script>
+    (function(){
+      const tabs = document.querySelectorAll('#tiers .tier-tab');
+      const panels = document.querySelectorAll('#tiers .tier-panel');
+      const mockLabel = document.getElementById('mockup-label');
+      const imgs = {
+        starter: document.getElementById('mockup-starter'),
+        pro: document.getElementById('mockup-pro'),
+        elite: document.getElementById('mockup-elite')
+      };
+
+      tabs.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const tier = btn.getAttribute('data-tier');
+
+          // button states
+          tabs.forEach(b => {
+            b.classList.remove('active');
+            b.classList.remove('text-[#0b0b10]');
+            b.style.background = '';
+            b.classList.add('border','border-white/20','text-white');
+          });
+          btn.classList.add('active');
+          btn.classList.remove('border','border-white/20','text-white');
+          btn.classList.add('text-[#0b0b10]');
+          btn.style.background = 'linear-gradient(90deg,#C8A2C8,#7FDBFF)';
+
+          // panel swap
+          panels.forEach(p => p.classList.add('hidden'));
+          document.querySelector(`[data-tier-panel="${tier}"]`).classList.remove('hidden');
+
+          // mockup swap
+          Object.values(imgs).forEach(i => i.classList.add('hidden'));
+          imgs[tier].classList.remove('hidden');
+          mockLabel.textContent = tier.charAt(0).toUpperCase() + tier.slice(1);
+        });
+      });
+    })();
+  </script>
+</section>
+<!-- =================== /What’s Inside the Program =================== -->
+
+<!-- ===================== Pricing Plans / Tiers ===================== -->
+<section id="pricing" class="relative py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">Pricing Plans</h2>
+      <p class="mt-4 text-lg text-white/80">Clear paths that qualify buyers and keep you flexible.</p>
+
+      <!-- Billing Toggle: 3 months vs 6 months -->
+      <div class="mt-6 inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 p-1">
+        <button id="bill-3m"
+                class="px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+          3 months
+        </button>
+        <button id="bill-6m"
+                class="px-4 py-2 rounded-full text-sm font-semibold text-white/80 hover:bg-white/10">
+          6 months <span class="text-blue-300/90 font-normal">save more</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Plans -->
+    <div class="mt-12 grid gap-6 md:grid-cols-3">
+
+      <!-- Starter -->
+      <article class="relative rounded-3xl bg-white/10 border border-white/15 p-8 flex flex-col hover:shadow-2xl hover:shadow-purple-500/20 transition">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-extrabold">Starter</h3>
+          <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+        </div>
+        <p class="mt-2 text-white/80">Foundation done right so you launch fast and safe.</p>
+
+        <div class="mt-6">
+          <div class="flex items-end gap-2">
+            <span class="text-4xl font-black" id="price-starter">$249</span>
+            <span class="text-white/60 text-sm" id="price-starter-suffix">for 3 months</span>
+          </div>
+          <div class="text-white/60 text-xs mt-1" id="price-starter-note">One payment for the period</div>
+        </div>
+
+        <ul class="mt-6 space-y-3 text-sm">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Product shortlist with validation</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Theme setup and speed targets under 3s LCP</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Offer blocks and basic UGC ad kit</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Weekly office hours</li>
+        </ul>
+
+        <div class="mt-8">
+          <a href="https://linktr.ee/dropalphamentor" target="_blank"
+             class="inline-flex w-full items-center justify-center px-6 py-3 rounded-full font-extrabold text-[#0b0b10] bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">
+            Get Starter
+          </a>
+        </div>
+      </article>
+
+      <!-- Pro • Most Popular -->
+      <article class="relative rounded-3xl p-1 bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] hover:shadow-2xl hover:shadow-blue-400/30 transition">
+        <div class="absolute -top-3 right-4 px-3 py-1 rounded-full text-xs font-bold bg-white text-[#0b0b10] shadow">
+          MOST POPULAR
+        </div>
+
+        <div class="rounded-3xl bg-[#0b0b10]/90 p-8 border border-white/10 flex flex-col">
+          <div class="flex items-center justify-between">
+            <h3 class="text-2xl font-extrabold">Pro</h3>
+            <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-rocket"></i>
+            </div>
+          </div>
+          <p class="mt-2 text-white/80">Scale with rules and creative sprints that hit KPI.</p>
+
+          <div class="mt-6">
+            <div class="flex items-end gap-2">
+              <span class="text-4xl font-black" id="price-pro">$499</span>
+              <span class="text-white/60 text-sm" id="price-pro-suffix">for 3 months</span>
+            </div>
+            <div class="text-white/60 text-xs mt-1" id="price-pro-note">One payment for the period</div>
+          </div>
+
+          <ul class="mt-6 space-y-3 text-sm">
+            <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Supplier SLA and inventory sync</li>
+            <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Creative sprints with win rate target at 33 percent</li>
+            <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Rules based scaling with ROAS floors</li>
+            <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>One to one strategy checkpoint each sprint</li>
+          </ul>
+
+          <div class="mt-8">
+            <a href="https://linktr.ee/dropalphamentor" target="_blank"
+               class="inline-flex w-full items-center justify-center px-6 py-3 rounded-full font-extrabold text-[#0b0b10] bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">
+              Get Pro
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Elite -->
+      <article class="relative rounded-3xl bg-white/10 border border-white/15 p-8 flex flex-col hover:shadow-2xl hover:shadow-purple-500/20 transition">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-extrabold">Elite</h3>
+          <div class="w-10 h-10 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+        </div>
+        <p class="mt-2 text-white/80">Operator mode with automation and LTV growth plays.</p>
+
+        <div class="mt-6">
+          <div class="flex items-end gap-2">
+            <span class="text-4xl font-black" id="price-elite">$999</span>
+            <span class="text-white/60 text-sm" id="price-elite-suffix">for 3 months</span>
+          </div>
+          <div class="text-white/60 text-xs mt-1" id="price-elite-note">One payment for the period</div>
+        </div>
+
+        <ul class="mt-6 space-y-3 text-sm">
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Team workflows and SOPs done with you</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Offer and AOV engineering plus LTV plays</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Automation stack and KPI dashboards</li>
+          <li><i class="fa-solid fa-check text-blue-300 mr-2"></i>Priority support and war room access</li>
+        </ul>
+
+        <div class="mt-8">
+          <a href="https://linktr.ee/dropalphamentor" target="_blank"
+             class="inline-flex w-full items-center justify-center px-6 py-3 rounded-full font-extrabold text-[#0b0b10] bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">
+            Get Elite
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Footnote -->
+    <p class="mt-6 text-center text-white/60 text-sm">
+      Choose 3 months to move fast or 6 months to compound and save more. Simple one time payment for each period.
+    </p>
+  </div>
+
+  <!-- Billing Toggle Script: swaps totals for 3m vs 6m -->
+  <script>
+    (function(){
+      const state = { mode: '3m' };
+
+      const btn3m = document.getElementById('bill-3m');
+      const btn6m = document.getElementById('bill-6m');
+
+      // gentle pricing not costly
+      const plans = [
+        { id: 'starter', m3: 249,  m6: 449 },
+        { id: 'pro',     m3: 499,  m6: 899 },
+        { id: 'elite',   m3: 999,  m6: 1699 }
+      ];
+
+      function priceFmt(n){ return '$' + n.toLocaleString(); }
+
+      function render(){
+        plans.forEach(p => {
+          const priceEl  = document.getElementById(`price-${p.id}`);
+          const suffixEl = document.getElementById(`price-${p.id}-suffix`);
+          const noteEl   = document.getElementById(`price-${p.id}-note`);
+          if(!priceEl) return;
+
+          if(state.mode === '3m'){
+            priceEl.textContent = priceFmt(p.m3);
+            suffixEl.textContent = 'for 3 months';
+            noteEl.textContent = 'One payment for the period';
+          } else {
+            priceEl.textContent = priceFmt(p.m6);
+            suffixEl.textContent = 'for 6 months';
+            noteEl.textContent = 'One payment for the period save more vs 3 months';
+          }
+        });
+
+        if(state.mode === '3m'){
+          btn3m.className = "px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]";
+          btn6m.className = "px-4 py-2 rounded-full text-sm font-semibold text-white/80 hover:bg-white/10";
+        } else {
+          btn6m.className = "px-4 py-2 rounded-full text-sm font-semibold bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]";
+          btn3m.className = "px-4 py-2 rounded-full text-sm font-semibold text-white/80 hover:bg-white/10";
+        }
+      }
+
+      btn3m.addEventListener('click', () => { state.mode = '3m'; render(); });
+      btn6m.addEventListener('click', () => { state.mode = '6m'; render(); });
+
+      render();
+    })();
+  </script>
+</section>
+<!-- =================== /Pricing Plans / Tiers =================== -->
+<!-- ===================== Final CTA / Urgency Close ===================== -->
+<section id="final-cta" class="relative py-20">
+  <div class="absolute inset-0 -z-10 pointer-events-none"
+       style="background: radial-gradient(60% 60% at 50% 40%, rgba(200,162,200,.20) 0%, rgba(127,219,255,.18) 35%, rgba(8,0,20,.0) 70%);"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <!-- Social proof ticker -->
+    <div class="overflow-hidden rounded-full border border-white/10 bg-white/10">
+      <div class="whitespace-nowrap animate-[ticker_30s_linear_infinite] py-2 text-sm">
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “First $1k day in 21 days”</span>
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “CR up 28 percent after checkout fixes”</span>
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “CPA down 19 percent, scaling safe”</span>
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “Payback under 48h, cashflow stable”</span>
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “Supplier sync stopped refund pain”</span>
+        <span class="mx-6 opacity-90"><i class="fa-solid fa-star text-yellow-300 mr-1"></i> “From stuck to steady in 30 days”</span>
+      </div>
+    </div>
+
+    <!-- Headline / Sub -->
+    <div class="text-center mt-10">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+        Ready to build a store that prints on rules, not vibes?
+      </h2>
+      <p class="mt-4 text-lg text-white/80">Limited slots. Operators only. If you’re in, apply now.</p>
+    </div>
+
+    <!-- Counters + Timer -->
+    <div class="mt-10 grid gap-6 sm:grid-cols-3">
+      <!-- Countdown -->
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15 text-center">
+        <div class="text-sm text-white/70">Enrollment window closes in</div>
+        <div id="cta-countdown" class="mt-2 text-3xl font-black tracking-wider">--:--:--</div>
+        <div class="mt-1 text-xs text-white/60">hh:mm:ss</div>
+      </div>
+
+      <!-- Live Join Counter -->
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15 text-center">
+        <div class="text-sm text-white/70">Live applicants today</div>
+        <div class="mt-2 text-3xl font-black tracking-wide">
+          <span id="cta-join">--</span>
+        </div>
+        <div class="mt-1 text-xs text-white/60">auto-updated</div>
+      </div>
+
+      <!-- Slots Remaining -->
+      <div class="rounded-2xl p-6 bg-white/10 border border-white/15 text-center">
+        <div class="text-sm text-white/70">Slots remaining</div>
+        <div class="mt-2 text-3xl font-black tracking-wide">
+          <span id="cta-slots">--</span>/25
+        </div>
+        <div class="mt-1 text-xs text-white/60">closes at zero</div>
+      </div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="https://linktr.ee/dropalphamentor" target="_blank"
+         class="inline-flex items-center justify-center px-7 py-4 rounded-full font-extrabold text-[#0b0b10] text-lg bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] shadow-xl hover:scale-105 transition">
+        Apply Now
+      </a>
+      <!-- Replace YOURNUMBER with your WhatsApp number, e.g., 15551234567 -->
+      <a href="https://linktr.ee/dropalphamentor"
+         target="_blank"
+         class="inline-flex items-center justify-center px-6 py-4 rounded-full font-semibold border border-white/20 bg-white/5 hover:bg-white/10 transition">
+        <i class="fa-brands fa-whatsapp text-green-400 text-xl mr-2"></i> DM on WhatsApp
+      </a>
+    </div>
+
+    <!-- Trust line -->
+    <p class="mt-4 text-center text-white/70 text-sm">
+      Secure application. No long contracts. Real operators helping you build.
+    </p>
+  </div>
+
+  <style>
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+
+  <!-- Logic: countdown + counters -->
+  <script>
+    (function(){
+      // Countdown: rolling 48h window from first visit
+      const key = 'da_countdown_deadline';
+      const stored = localStorage.getItem(key);
+      let deadline = stored ? new Date(stored) : null;
+      if(!deadline || isNaN(deadline.getTime())){
+        deadline = new Date(Date.now() + 48 * 60 * 60 * 1000);
+        localStorage.setItem(key, deadline.toISOString());
+      }
+
+      const el = document.getElementById('cta-countdown');
+      function tick(){
+        const now = new Date();
+        let diff = deadline - now;
+        if(diff <= 0){
+          // restart another short window (12h) to keep urgency rolling
+          deadline = new Date(Date.now() + 12 * 60 * 60 * 1000);
+          localStorage.setItem(key, deadline.toISOString());
+          diff = deadline - now;
+        }
+        const h = Math.floor(diff / 3.6e6);
+        const m = Math.floor((diff % 3.6e6) / 6e4);
+        const s = Math.floor((diff % 6e4) / 1000);
+        el.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      }
+      tick(); setInterval(tick, 1000);
+
+      // Live join counter: gentle, believable increments
+      const joinEl = document.getElementById('cta-join');
+      const baseKey = 'da_join_base';
+      let base = Number(localStorage.getItem(baseKey));
+      if(!base) { base = Math.floor(8 + Math.random()*6); localStorage.setItem(baseKey, base); }
+      let live = base;
+      function updateJoin(){
+        // add 0 or 1 randomly every 20–40s
+        if(Math.random() < 0.5) live += 1;
+        joinEl.textContent = live;
+        setTimeout(updateJoin, 20000 + Math.random()*20000);
+      }
+      joinEl.textContent = live;
+      setTimeout(updateJoin, 20000);
+
+      // Slots remaining: start near 9–14, slowly drop but never below 0
+      const slotEl = document.getElementById('cta-slots');
+      const slotKey = 'da_slots';
+      let slots = Number(localStorage.getItem(slotKey));
+      if(!slots && slots !== 0){
+        slots = Math.floor(9 + Math.random()*6); // 9–14
+        localStorage.setItem(slotKey, slots);
+      }
+      slotEl.textContent = slots;
+
+      function maybeDecrement(){
+        if(slots > 0 && Math.random() < 0.35){
+          slots -= 1;
+          localStorage.setItem(slotKey, slots);
+          slotEl.textContent = slots;
+        }
+        setTimeout(maybeDecrement, 45000 + Math.random()*45000); // 45–90s
+      }
+      setTimeout(maybeDecrement, 45000);
+    })();
+  </script>
+</section>
+<!-- =================== /Final CTA / Urgency Close =================== -->
+<section id="faq" class="relative py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
+    <!-- Header -->
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">FAQ / Objection Handling</h2>
+      <p class="mt-4 text-lg text-white/80">Still on the fence? Read this, watch quick proofs, decide fast.</p>
+    </div>
+
+    <!-- Accordions -->
+    <div class="mt-12 space-y-4" id="faq-list">
+      <!-- Q1 -->
+      <article class="rounded-2xl border border-white/15 bg-white/10 overflow-hidden">
+        <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 group">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-question"></i>
+            </span>
+            <h3 class="text-lg md:text-xl font-extrabold">“I’ve tried mentorships before. What’s different here?”</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down transition-transform group-[.open]:rotate-180"></i>
+        </button>
+        <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300">
+          <div class="px-6 pb-6 pt-1 text-white/90 space-y-4">
+            <p><strong class="text-white">Operators, not influencers.</strong> We run signal-based product picks, funnel control, and rules-based scaling. No vague “motivation,” just execution gates.</p>
+            <!-- collapsible detail -->
+            <details class="bg-white/5 border border-white/10 rounded-xl p-4">
+              <summary class="cursor-pointer font-semibold">What does that look like week to week?</summary>
+              <ul class="mt-3 list-disc list-inside text-white/80 space-y-1">
+                <li>72-hour validation loop before ad spend</li>
+                <li>&lt; 3s LCP and checkout friction fixes</li>
+                <li>Creative sprints with 33 percent win-rate target</li>
+                <li>Scale only on ROAS floors and payback windows</li>
+              </ul>
+            </details>
+            <div class="flex gap-3">
+              <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 hover:bg-white/15"
+                      data-open="vid-different">
+                <i class="fa-solid fa-circle-play text-purple-300"></i> 60s Why We’re Different
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Q2 -->
+      <article class="rounded-2xl border border-white/15 bg-white/10 overflow-hidden">
+        <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 group">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-wallet"></i>
+            </span>
+            <h3 class="text-lg md:text-xl font-extrabold">“What budget do I need for ads and tests?”</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down transition-transform group-[.open]:rotate-180"></i>
+        </button>
+        <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300">
+          <div class="px-6 pb-6 pt-1 text-white/90 space-y-4">
+            <p>We run <strong class="text-white">lean tests first</strong>. Expect an initial test stack of <strong>$300–$600</strong> across 72-hour validation. We scale only when KPIs hit—no cash bleed.</p>
+            <details class="bg-white/5 border border-white/10 rounded-xl p-4">
+              <summary class="cursor-pointer font-semibold">Minimum numbers we look for</summary>
+              <ul class="mt-3 list-disc list-inside text-white/80 space-y-1">
+                <li>CTR &gt; 1.5 percent on prospecting</li>
+                <li>ATC rate &gt; 4 percent</li>
+                <li>Checkout start &gt; 2 percent</li>
+                <li>Payback within 48 hours on scale rules</li>
+              </ul>
+            </details>
+            <div class="flex gap-3">
+              <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 hover:bg-white/15"
+                      data-open="vid-budget">
+                <i class="fa-solid fa-circle-play text-purple-300"></i> 45s Budget Walkthrough
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Q3 -->
+      <article class="rounded-2xl border border-white/15 bg-white/10 overflow-hidden">
+        <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 group">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-truck-fast"></i>
+            </span>
+            <h3 class="text-lg md:text-xl font-extrabold">“Do you help with suppliers and shipping issues?”</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down transition-transform group-[.open]:rotate-180"></i>
+        </button>
+        <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300">
+          <div class="px-6 pb-6 pt-1 text-white/90 space-y-4">
+            <p>Yes. <strong class="text-white">Supplier vetting, SLAs, and inventory sync</strong> are built in. We prevent refund spikes before they start.</p>
+            <details class="bg-white/5 border border-white/10 rounded-xl p-4">
+              <summary class="cursor-pointer font-semibold">What we implement</summary>
+              <ul class="mt-3 list-disc list-inside text-white/80 space-y-1">
+                <li>Test orders and QC checklist</li>
+                <li>Fallback supplier and lane options</li>
+                <li>Clear comms cadence and dispute SOP</li>
+              </ul>
+            </details>
+            <div class="flex gap-3">
+              <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 hover:bg-white/15"
+                      data-open="vid-suppliers">
+                <i class="fa-solid fa-circle-play text-purple-300"></i> 40s Supplier SOP
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Q4 -->
+      <article class="rounded-2xl border border-white/15 bg-white/10 overflow-hidden">
+        <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 group">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-stopwatch"></i>
+            </span>
+            <h3 class="text-lg md:text-xl font-extrabold">“How fast until I see traction?”</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down transition-transform group-[.open]:rotate-180"></i>
+        </button>
+        <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300">
+          <div class="px-6 pb-6 pt-1 text-white/90 space-y-4">
+            <p>Most cohorts see <strong class="text-white">first traction in 7–14 days</strong> and first scale pushes in <strong>30–60 days</strong>, depending on niche and execution.</p>
+            <details class="bg-white/5 border border-white/10 rounded-xl p-4">
+              <summary class="cursor-pointer font-semibold">What speeds it up</summary>
+              <ul class="mt-3 list-disc list-inside text-white/80 space-y-1">
+                <li>Fast creative iteration</li>
+                <li>Offer clarity and proof assets</li>
+                <li>Clean analytics and decision cadence</li>
+              </ul>
+            </details>
+            <div class="flex gap-3">
+              <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 hover:bg-white/15"
+                      data-open="vid-timeline">
+                <i class="fa-solid fa-circle-play text-purple-300"></i> 30s Timeline Overview
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Q5 -->
+      <article class="rounded-2xl border border-white/15 bg-white/10 overflow-hidden">
+        <button class="faq-toggle w-full text-left px-6 py-5 flex items-center justify-between gap-4 group">
+          <div class="flex items-center gap-3">
+            <span class="w-9 h-9 rounded-xl grid place-items-center bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF] text-[#0b0b10]">
+              <i class="fa-solid fa-shield-heart"></i>
+            </span>
+            <h3 class="text-lg md:text-xl font-extrabold">“What if I get stuck between calls?”</h3>
+          </div>
+          <i class="fa-solid fa-chevron-down transition-transform group-[.open]:rotate-180"></i>
+        </button>
+        <div class="faq-panel max-h-0 overflow-hidden transition-all duration-300">
+          <div class="px-6 pb-6 pt-1 text-white/90 space-y-4">
+            <p>We run <strong class="text-white">asynchronous checkpoints</strong> for quick unblocks and keep a living SOP library with examples you can clone.</p>
+            <details class="bg-white/5 border border-white/10 rounded-xl p-4">
+              <summary class="cursor-pointer font-semibold">Access you get</summary>
+              <ul class="mt-3 list-disc list-inside text-white/80 space-y-1">
+                <li>Creative board comments</li>
+                <li>Slack-style support threads</li>
+                <li>Priority troubleshoot queue (Pro/Elite)</li>
+              </ul>
+            </details>
+            <div class="flex gap-3">
+              <button class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/15 bg-white/10 hover:bg-white/15"
+                      data-open="vid-support">
+                <i class="fa-solid fa-circle-play text-purple-300"></i> 35s Support Walkthrough
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="mt-10 text-center">
+      <a href="" target="_blank"
+         class="inline-flex items-center justify-center px-8 py-4 rounded-full font-extrabold text-[#0b0b10] text-lg bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF] shadow-xl hover:scale-105 transition">
+        Still got a blocker? Apply and ask it live
+      </a>
+      <div class="mt-3 text-white/70 text-sm">Secure application. Operators only.</div>
+    </div>
+  </div>
+ <!-- FAQ script -->
+  <script>
+    (function(){
+      // accordion open/close
+      document.querySelectorAll('#faq .faq-toggle').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const article = btn.parentElement;
+          const panel = article.querySelector('.faq-panel');
+          const open = article.classList.toggle('open'); // for chevron rotation
+          btn.classList.toggle('open', open);
+          // animated height
+          if(open){
+            panel.style.maxHeight = panel.scrollHeight + 'px';
+          } else {
+            panel.style.maxHeight = '0px';
+          }
+        });
+      });
+
+      // video modals
+      const openers = document.querySelectorAll('[data-open]');
+      const modals = document.querySelectorAll('.faq-modal');
+      const closers = document.querySelectorAll('[data-close]');
+
+      openers.forEach(o => {
+        o.addEventListener('click', () => {
+          const id = o.getAttribute('data-open');
+          const m = document.getElementById(id);
+          if(m) m.classList.remove('hidden');
+        });
+      });
+      closers.forEach(c => {
+        c.addEventListener('click', () => {
+          const id = c.getAttribute('data-close');
+          const m = document.getElementById(id);
+          if(m) m.classList.add('hidden');
+        });
+      });
+      // close on backdrop
+      modals.forEach(m => {
+        m.addEventListener('click', (e) => { if(e.target === m) m.classList.add('hidden'); });
+      });
+    })();
+  </script>
+</section>
+
+<!-- ===================== Advanced Footer ===================== -->
+<footer id="site-footer" class="relative text-white">
+  <!-- backdrop glow -->
+  <div class="absolute inset-0 -z-10"
+       style="background: radial-gradient(60% 60% at 50% 0%, rgba(200,162,200,.20) 0%, rgba(127,219,255,.18) 35%, rgba(8,0,20,0) 70%);"></div>
+
+  <div class="border-t border-white/10 bg-[#0b0b10]/90 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid gap-10 md:gap-12 lg:grid-cols-6">
+        <!-- Brand / mini value -->
+        <div class="lg:col-span-2">
+          <div class="flex items-center gap-3">
+            <span class="inline-grid place-items-center w-10 h-10 rounded-xl text-[#0b0b10] bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF]">
+              <i class="fa-solid fa-bolt"></i>
+            </span>
+            <h3 class="text-xl font-extrabold">DropAlphaMentor</h3>
+          </div>
+          <p class="mt-4 text-white/75">
+            Operators, not influencers. Signal-based products, funnel control, rules-based scaling.
+          </p>
+
+          <!-- Mini trust badges -->
+          <div class="mt-5 flex items-center gap-3 text-xs text-white/60">
+            <span class="px-2 py-1 rounded-full border border-white/15 bg-white/5">sub 3s LCP</span>
+            <span class="px-2 py-1 rounded-full border border-white/15 bg-white/5">48h payback</span>
+            <span class="px-2 py-1 rounded-full border border-white/15 bg-white/5">refund &lt; 1.5%</span>
+          </div>
+
+          <!-- Socials -->
+          <div class="mt-6 flex items-center gap-3">
+            <a href="#" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10" aria-label="Twitter/X"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://linktr.ee/dropalphamentor" target="_blank" class="p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp text-green-400"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu columns -->
+        <div class="grid gap-10 sm:grid-cols-2 lg:col-span-4">
+          <!-- Programs -->
+          <nav aria-labelledby="f-programs">
+            <h4 id="f-programs" class="text-sm font-bold tracking-wider text-white/80">Programs</h4>
+            <ul class="mt-4 space-y-3 text-white/80">
+              <li><a href="#inside" class="hover:text-white">What’s Inside</a></li>
+              <li><a href="#how-it-works" class="hover:text-white">How It Works</a></li>
+              <li><a href="#pricing" class="hover:text-white">Pricing / Tiers</a></li>
+              <li><a href="#final-cta" class="hover:text-white">Apply Now</a></li>
+            </ul>
+          </nav>
+
+          <!-- Support -->
+          <nav aria-labelledby="f-support">
+            <h4 id="f-support" class="text-sm font-bold tracking-wider text-white/80">Support</h4>
+            <ul class="mt-4 space-y-3 text-white/80">
+              <li><a href="https://linktr.ee/dropalphamentor" class="hover:text-white">Email Support</a></li>
+              <li><a href="https://linktr.ee/dropalphamentor" target="_blank" class="hover:text-white">WhatsApp DM</a></li>
+              
+            </ul>
+          </nav>
+
+          <!-- Newsletter / Quick contact -->
+          <div>
+            <h4 class="text-sm font-bold tracking-wider text-white/80">Updates and Wins</h4>
+            <p class="mt-4 text-white/75">Get playbooks, creative prompts, and cohort wins.</p>
+            <form class="mt-4 flex items-stretch gap-2" onsubmit="event.preventDefault(); document.getElementById('nl-ok').classList.remove('hidden');">
+              <input type="email" required placeholder="you@example.com"
+                     class="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/15 placeholder-white/40 focus:outline-none focus:border-[#7FDBFF]" />
+              <button class="px-4 py-3 rounded-xl font-semibold text-[#0b0b10] bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">Join</button>
+            </form>
+            <div id="nl-ok" class="hidden mt-2 text-sm text-white/70">You’re in. Check your inbox.</div>
+
+            <div class="mt-6 text-sm text-white/70">
+              <div class="flex items-center gap-2"><i class="fa-solid fa-location-dot opacity-70"></i> Remote • Worldwide</div>
+              <div class="flex items-center gap-2 mt-2"><i class="fa-solid fa-clock opacity-70"></i> Response time under 24h</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="mt-12 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+
+      <!-- Lower bar -->
+      <div class="mt-6 flex flex-col lg:flex-row items-center justify-between gap-4">
+        <!-- Legal -->
+        <div class="flex flex-wrap items-center gap-4 text-sm text-white/60">
+          <span>&copy; <span id="year"></span> DropAlphaMentor</span>
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+          <button id="cookie-btn" class="hover:text-white">Cookie Preferences</button>
+        </div>
+
+        <!-- Language -->
+        <div class="flex items-center gap-2">
+          <label for="lang" class="text-sm text-white/60">Language</label>
+          <select id="lang" class="bg-white/5 border border-white/15 rounded-lg px-3 py-2 text-sm focus:outline-none">
+            <option>English</option>
+            <option>Français</option>
+            <option>Deutsch</option>
+            <option>Español</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to top -->
+  <button id="toTop"
+          class="fixed bottom-6 right-6 z-40 opacity-0 pointer-events-none transition
+                 px-4 py-3 rounded-full shadow-xl border border-white/10 bg-[#0b0b10]/80
+                 hover:bg-[#0b0b10]">
+    <span class="inline-grid place-items-center w-6 h-6 rounded-md text-[#0b0b10] bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF]">
+      <i class="fa-solid fa-chevron-up text-xs"></i>
+    </span>
+  </button>
+
+  <!-- Cookie sheet (lightweight) -->
+  <div id="cookie-sheet" class="fixed inset-x-4 bottom-4 md:inset-x-auto md:right-6 md:max-w-lg
+                               bg-[#0b0b10] border border-white/10 rounded-2xl p-4 shadow-2xl hidden z-50">
+    <div class="flex items-start gap-3">
+      <span class="inline-grid place-items-center w-8 h-8 rounded-lg text-[#0b0b10] bg-gradient-to-br from-[#C8A2C8] to-[#7FDBFF]">
+        <i class="fa-solid fa-cookie-bite"></i>
+      </span>
+      <div class="text-sm">
+        <p class="text-white/90">We use cookies to analyze performance and improve your experience.</p>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <button id="cookie-accept"
+                  class="px-4 py-2 rounded-full text-[#0b0b10] font-semibold bg-gradient-to-r from-[#C8A2C8] to-[#7FDBFF]">
+            Accept
+          </button>
+          <button id="cookie-decline"
+                  class="px-4 py-2 rounded-full font-semibold border border-white/15 bg-white/5">
+            Decline
+          </button>
+        </div>
+      </div>
+      <button id="cookie-close" class="ml-auto text-white/60 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+  </div>
+
+  <!-- Footer scripts -->
+  <script>
+    (function(){
+      // year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // back to top
+      const toTop = document.getElementById('toTop');
+      function onScroll(){
+        if(window.scrollY > 600){
+          toTop.classList.remove('opacity-0','pointer-events-none');
+        } else {
+          toTop.classList.add('opacity-0','pointer-events-none');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      // cookie prefs
+      const SHEET = document.getElementById('cookie-sheet');
+      const BTN   = document.getElementById('cookie-btn');
+      const KEY   = 'da_cookie_pref';
+      const pref  = localStorage.getItem(KEY);
+      if(!pref){ setTimeout(()=>SHEET.classList.remove('hidden'), 1200); }
+      BTN.addEventListener('click', ()=> SHEET.classList.remove('hidden'));
+      document.getElementById('cookie-accept').addEventListener('click', () => { localStorage.setItem(KEY,'accept'); SHEET.classList.add('hidden'); });
+      document.getElementById('cookie-decline').addEventListener('click', () => { localStorage.setItem(KEY,'decline'); SHEET.classList.add('hidden'); });
+      document.getElementById('cookie-close').addEventListener('click', () => SHEET.classList.add('hidden'));
+    })();
+  </script>
+</footer>
+<!-- =================== /Advanced Footer =================== -->
+
